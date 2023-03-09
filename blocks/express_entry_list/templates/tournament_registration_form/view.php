@@ -160,4 +160,15 @@ if ($entity) { ?>
             });
         });
     </script>
+    <script>
+        $(function () {
+            $('a[data-id]').on('click', function (e) {
+                e.preventDefault();
+                // Get tournament id from clicked link
+                const tournamentId = $(this).attr('data-id');
+                // Set value of select
+                $('[data-express-field-handle="tournament"]').val(tournamentId);
+            });
+        });
+    </script>
 <?php } ?>
